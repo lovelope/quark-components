@@ -36,5 +36,9 @@
   "devDependencies": {
     "cross-env": "^5.2.0",
     "rimraf": "^2.6.3"
-  }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "gitHead": "4af0cabe2ad7e0d6e3abfeedab099f67066dc222"
 }
