@@ -1,0 +1,40 @@
+{
+  "name": "@lovelope/table-factory",
+  "version": "0.0.0",
+  "description": "Combinable higher order components for list.",
+  "keywords": [
+    "list",
+    "combinable",
+    "HOC",
+    "react",
+    "component"
+  ],
+  "author": "lovelope <lovelope@qq.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/table-factory.js",
+  "types": "lib/table-factory.d.ts",
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "clean": "rimraf lib",
+    "prebuild": "yarn clean",
+    "build": "yarn build:compile && yarn build:types",
+    "build:compile": "cross-env NODE_ENV=production  ../../node_modules/.bin/babel src -d lib --config-file ../../babel.config.js --verbose --extensions .tsx --ignore */**/*.d.ts,**/**/*.test.ts --source-maps",
+    "build:types": "cross-env NODE_ENV=production ../../node_modules/.bin/tsc --project ../../tsconfig.types.json --outDir lib"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "react": "^16.8.6"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "rimraf": "^2.6.3"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "@lovelope/quark-components",
+  "private": true,
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@types/lodash": "^4.14.136",
+    "@types/react": "^16.8.24",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "babel-eslint": "^10.0.2",
+    "babel-plugin-import": "^1.12.0",
+    "babel-plugin-lodash": "^3.3.4",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.0.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.6.1",
+    "husky": "^3.0.2",
+    "lerna": "^3.16.4",
+    "lint-staged": "^9.2.1",
+    "prettier": "^1.18.2",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "lodash": "^4.17.15",
+    "react": "^16.8.6"
+  }
+}
