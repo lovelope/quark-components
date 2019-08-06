@@ -1,6 +1,6 @@
 {
   "name": "@lovelope/table-factory",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Combinable higher order components for list.",
   "keywords": [
     "HOC",
