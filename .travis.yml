@@ -15,7 +15,7 @@ git:
   depth: 3
 
 install:
-  - yarn bootstrap
+  - yarn run bootstrap
 
 script:
   - 'yarn test'
