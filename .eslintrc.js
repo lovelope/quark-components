@@ -10,14 +10,14 @@ module.exports = {
     sourceType: 'module',
     ecmaFeatures: {
       impliedStrict: true,
-      jsx: true
-    }
+      jsx: true,
+    },
   },
 
   extends: [
     'eslint-config-airbnb',
     'eslint-config-prettier',
-    'eslint-config-prettier/react'
+    'eslint-config-prettier/react',
   ],
   plugins: ['eslint-plugin-react-hooks', 'eslint-plugin-prettier'],
 
@@ -25,13 +25,13 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
-    jest: true
+    jest: true,
   },
 
   settings: {
     react: {
-      version: 'detect'
-    }
+      version: 'detect',
+    },
   },
 
   rules: {
@@ -42,8 +42,8 @@ module.exports = {
       {
         components: ['Link'],
         specialLink: ['to'],
-        aspects: ['noHref', 'invalidHref', 'preferButton']
-      }
+        aspects: ['noHref', 'invalidHref', 'preferButton'],
+      },
     ],
 
     'react-hooks/rules-of-hooks': ERROR, // Checks rules of Hooks
@@ -51,12 +51,12 @@ module.exports = {
 
     'react/jsx-filename-extension': [
       ERROR,
-      { extensions: ['.js', '.jsx', '.ts', '.tsx'] }
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     ],
 
     'import/extensions': [ERROR, 'always', { ignorePackages: true }],
 
-    'prettier/prettier': ERROR
+    'prettier/prettier': ERROR,
   },
 
   overrides: [
@@ -65,8 +65,8 @@ module.exports = {
       parser: '@typescript-eslint/parser',
       rules: {
         // type reference
-        'spaced-comment': OFF
-      }
+        'spaced-comment': OFF,
+      },
     },
     {
       files: ['**/*.ts', '**/*.tsx'],
@@ -75,18 +75,18 @@ module.exports = {
         ecmaVersion: 2018,
         sourceType: 'module',
         ecmaFeatures: {
-          jsx: true
+          jsx: true,
         },
 
         project: 'tsconfig.json',
 
-        warnOnUnsupportedTypeScriptVersion: true
+        warnOnUnsupportedTypeScriptVersion: true,
       },
       plugins: [
         'eslint-plugin-react-hooks',
         '@typescript-eslint/eslint-plugin',
         'eslint-plugin-import/config/typescript',
-        'eslint-plugin-prettier'
+        'eslint-plugin-prettier',
       ],
 
       rules: {
@@ -103,12 +103,12 @@ module.exports = {
           WARN,
           {
             args: 'none',
-            ignoreRestSiblings: true
-          }
+            ignoreRestSiblings: true,
+          },
         ],
         'no-useless-constructor': OFF,
-        '@typescript-eslint/no-useless-constructor': WARN
-      }
-    }
-  ]
+        '@typescript-eslint/no-useless-constructor': WARN,
+      },
+    },
+  ],
 };
