@@ -2,6 +2,9 @@
 
 `TableFactory` 是一个用于管理列表页的高阶组件；主要负责数据的拉取和筛选条件的管理；
 
+[English](./README.md)
+[中文](./README.zh-CN.md)
+
 ## 安装
 
 ```bash

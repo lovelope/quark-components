@@ -2,6 +2,9 @@
 
 `TableFactory` is a combinable higher order components for list management page, in order to fetch list data and manage filter queries.
 
+[English](./README.md)
+[中文](./README.zh-CN.md)
+
 ## Install
 
 ```bash
