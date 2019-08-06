@@ -12,11 +12,9 @@
   "packages": ["packages/*"],
   "command": {
     "version": {
+      "conventionalCommits": true,
       "exact": true,
       "message": "chore(release): publish %s"
-    },
-    "publish": {
-      "conventionalCommits": true
     }
   },
   "npmClient": "yarn",
