@@ -1,0 +1,21 @@
+language: node_js
+
+os:
+  - linux
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+node_js:
+  - 'lts/*'
+
+git:
+  depth: 3
+
+install:
+  - yarn bootstrap
+
+script:
+  - 'yarn test'

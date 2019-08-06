@@ -46,6 +46,7 @@
     "typescript": "^3.5.3"
   },
   "scripts": {
+    "bootstrap": "lerna bootstrap",
     "test": "jest"
   },
   "prettier": {
