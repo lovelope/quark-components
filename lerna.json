@@ -13,7 +13,7 @@
   "command": {
     "version": {
       "exact": true,
-      "message": "chore(release): release"
+      "message": "chore(release): publish %s"
     },
     "publish": {
       "conventionalCommits": true
