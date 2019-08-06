@@ -12,7 +12,7 @@ yarn add -S @lovelope/table-factory
 
 ## Usage
 
-```js
+```jsx
 import TableFactory from '@lovelope/table-factory';
 import React from 'react';
 import { getGoodsList } from './services';

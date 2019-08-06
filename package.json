@@ -1,6 +1,11 @@
 {
   "name": "@lovelope/quark-components",
   "private": true,
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "lodash": "^4.17.15",
+    "react": "^16.8.6"
+  },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
@@ -33,9 +38,34 @@
     "prettier": "^1.18.2",
     "typescript": "^3.5.3"
   },
-  "dependencies": {
-    "@babel/core": "^7.5.5",
-    "lodash": "^4.17.15",
-    "react": "^16.8.6"
+  "prettier": {
+    "endOfLine": "lf",
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{css,less}": [
+      "prettier --write",
+      "git add --force"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "git add --force"
+    ],
+    "*.{json,md,html}": [
+      "prettier --write",
+      "git add --force"
+    ]
   }
 }
