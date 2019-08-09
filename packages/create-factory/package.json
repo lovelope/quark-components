@@ -1,6 +1,6 @@
 {
   "name": "@lovelope/create-factory",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Lightweight higher order components for edit page or detail page.",
   "keywords": [
     "HOC",
