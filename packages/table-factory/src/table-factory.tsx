@@ -43,8 +43,8 @@ interface Data {
 }
 
 interface ResponseData {
-  data?: Data;
   [k: string]: unknown;
+  data?: Data;
 }
 
 interface WrapperComponentProps {}
@@ -69,7 +69,9 @@ export interface TableFactoryProps {
 
 export type TableFactoryType = (
   props: TableFactoryProps
-) => (Component: React.ComponentType) => React.ComponentType;
+) => (
+  Component: React.ComponentType<WrapperComponentProps>
+) => React.ComponentType;
 
 const TableFactory: TableFactoryType = ({
   immediate = true,

@@ -28,8 +28,8 @@
   "scripts": {
     "prebuild": "yarn clean",
     "build": "yarn build:compile && yarn build:types",
-    "build:compile": "cross-env NODE_ENV=production  ../../node_modules/.bin/babel src -d lib --config-file ../../babel.config.js --verbose --extensions .tsx --ignore */**/*.d.ts,**/**/*.test.ts --source-maps",
-    "build:types": "cross-env NODE_ENV=production ../../node_modules/.bin/tsc --project ../../tsconfig.types.json --outDir lib",
+    "build:compile": "cross-env NODE_ENV=production  babel src -d lib --config-file ../../babel.config.js --verbose --extensions .tsx --ignore */**/*.d.ts,**/**/*.test.ts --source-maps",
+    "build:types": "cross-env NODE_ENV=production tsc -p ./tsconfig.json --outDir lib",
     "clean": "rimraf lib",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
@@ -38,6 +38,8 @@
     "react": "^16.8.6"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.136",
+    "@types/react": "^16.9.0",
     "cross-env": "^5.2.0",
     "rimraf": "^2.6.3"
   },

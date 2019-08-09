@@ -13,3 +13,6 @@ package-lock.json
 
 # out
 lib
+
+# jest coverage
+coverage

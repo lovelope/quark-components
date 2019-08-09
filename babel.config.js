@@ -9,7 +9,7 @@ module.exports = {
     'babel-plugin-lodash', // for lodash tree shaking
     [
       'babel-plugin-import',
-      { libraryName: 'antd', libraryDirectory: 'es', style: true },
+      { libraryName: 'antd', libraryDirectory: 'lib', style: false },
       'antd',
     ], // for `antd`, `style: true` loading `.less` file
   ],
