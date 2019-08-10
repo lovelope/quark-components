@@ -110,5 +110,13 @@ module.exports = {
         '@typescript-eslint/no-useless-constructor': WARN,
       },
     },
+    {
+      files: ['**/__tests__/**', '**/*.test.ts', '**/*.test.tsx'],
+      parser: '@typescript-eslint/parser',
+      rules: {
+        'import/no-extraneous-dependencies': WARN,
+        'react/prefer-stateless-function': WARN,
+      },
+    },
   ],
 };

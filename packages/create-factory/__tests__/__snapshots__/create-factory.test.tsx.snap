@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`create-factory components CreateFactory normal 1`] = `
+<form
+  class="ant-form ant-form-horizontal"
+>
+  <div
+    class="ant-row ant-form-item"
+  >
+    <div
+      class="ant-col ant-form-item-label"
+    >
+      <label
+        class=""
+        for="name"
+        title="username"
+      >
+        username
+      </label>
+    </div>
+    <div
+      class="ant-col ant-form-item-control-wrapper"
+    >
+      <div
+        class="ant-form-item-control"
+      >
+        <span
+          class="ant-form-item-children"
+        >
+          <input
+            class="ant-input"
+            data-__field="[object Object]"
+            data-__meta="[object Object]"
+            id="name"
+            type="text"
+            value=""
+          />
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ant-row ant-form-item"
+  >
+    <div
+      class="ant-col ant-form-item-label"
+    >
+      <label
+        class=""
+        for="email"
+        title="Eamil"
+      >
+        Eamil
+      </label>
+    </div>
+    <div
+      class="ant-col ant-form-item-control-wrapper"
+    >
+      <div
+        class="ant-form-item-control"
+      >
+        <span
+          class="ant-form-item-children"
+        >
+          <input
+            class="ant-input"
+            data-__field="[object Object]"
+            data-__meta="[object Object]"
+            id="email"
+            type="text"
+            value=""
+          />
+        </span>
+      </div>
+    </div>
+  </div>
+</form>
+`;
