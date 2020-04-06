@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 import React from 'react';
 import { render } from 'enzyme';
 import { Table } from 'antd';
@@ -22,12 +23,13 @@ describe('table-factory', () => {
       });
     }
 
-    testPair('TableFactory', props => {
+    testPair('TableFactory', (props) => {
       interface YourFilterProps {
         onFilter: (v: any) => void;
         query: any;
         onReset: (v: any) => void;
       }
+      // eslint-disable-next-line react/prefer-stateless-function
       class YourFilter extends React.Component<YourFilterProps> {
         render() {
           return null;

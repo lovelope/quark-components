@@ -94,7 +94,6 @@ module.exports = {
 
         'no-dupe-class-members': OFF,
 
-        '@typescript-eslint/no-angle-bracket-type-assertion': WARN,
         'no-array-constructor': OFF,
         '@typescript-eslint/no-array-constructor': WARN,
         '@typescript-eslint/no-namespace': ERROR,

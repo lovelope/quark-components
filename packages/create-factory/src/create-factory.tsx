@@ -50,13 +50,14 @@ const CreateFactory: CreateFactoryType = ({
   getAction,
   putAction,
   postAction,
-  mapPropsToFields = p => p,
+  mapPropsToFields = (p) => p,
   initialValues = {},
-}: CreateFactoryProps) => Component => {
+}: CreateFactoryProps) => (Component) => {
   class WrapperComponent extends React.Component<WrapperProps, WrapperState> {
-    static displayName = `CreateFactory(${Component.displayName ||
-      Component.name ||
-      'Component'})`;
+    // eslint-disable-next-line react/static-property-placement
+    static displayName = `CreateFactory(${
+      Component.displayName || Component.name || 'Component'
+    })`;
 
     constructor(props) {
       super(props);
@@ -110,6 +111,7 @@ const CreateFactory: CreateFactoryType = ({
         onSubmit: this.onSubmit,
       };
 
+      // eslint-disable-next-line react/jsx-props-no-spreading
       return <Component {...definedProps} />;
     }
   }

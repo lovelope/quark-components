@@ -46,7 +46,7 @@
     "jest": "^25.2.7",
     "lerna": "^3.20.2",
     "lint-staged": "^10.1.2",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.4",
     "react-dom": "^16.13.1",
     "react-test-renderer": "^16.13.1",
     "typescript": "^3.8.3"
@@ -55,7 +55,8 @@
     "clean": "lerna clean -y",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
-    "test": "jest"
+    "test": "jest",
+    "prettier": "prettier --write \"**/*.{json,html,css,less,js,jsx,ts,tsx,md}\""
   },
   "workspaces": {
     "packages": [

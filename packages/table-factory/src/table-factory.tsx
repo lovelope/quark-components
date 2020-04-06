@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 import React from 'react';
 import { mapValues } from 'lodash';
 
@@ -33,7 +34,7 @@ class ParamsStore implements ParamsStoreType {
     this.params = props;
   }
 
-  setPathQuery = query => {
+  setPathQuery = (query) => {
     this.params = query;
   };
 }
@@ -79,7 +80,7 @@ const TableFactory: TableFactoryType = ({
   mute = ['keyword'],
   getAction,
   params = {},
-  format = p => p,
+  format = (p) => p,
 }: TableFactoryProps) => (Component: React.ComponentType) => {
   const store = new ParamsStore({
     [enums.page]: params[enums.page] || 1,
@@ -90,9 +91,10 @@ const TableFactory: TableFactoryType = ({
     WrapperComponentProps,
     WrapperComponentState
   > {
-    static displayName = `TableFactory(${Component.displayName ||
-      Component.name ||
-      'Component'})`;
+    // eslint-disable-next-line react/static-property-placement
+    static displayName = `TableFactory(${
+      Component.displayName || Component.name || 'Component'
+    })`;
 
     constructor(props) {
       super(props);
@@ -110,7 +112,10 @@ const TableFactory: TableFactoryType = ({
     onFilter = (queryParams = {}, cb = () => {}) => {
       const { query } = this.state;
       let updatedQuery = {};
-      if (immediate && Object.keys(queryParams).every(p => p !== enums.page)) {
+      if (
+        immediate &&
+        Object.keys(queryParams).every((p) => p !== enums.page)
+      ) {
         updatedQuery = { ...query, ...queryParams, [enums.page]: 1 };
       } else {
         updatedQuery = { ...query, ...queryParams };
@@ -119,7 +124,7 @@ const TableFactory: TableFactoryType = ({
       this.setState({ query: { ...updatedQuery } }, () => {
         if (
           immediate &&
-          !Object.keys(queryParams).some(p => mute.includes(p))
+          !Object.keys(queryParams).some((p) => mute.includes(p))
         ) {
           this.loadData();
         }
@@ -157,6 +162,7 @@ const TableFactory: TableFactoryType = ({
         onFilter: this.onFilter,
         onReset: this.onReset,
       };
+      // eslint-disable-next-line react/jsx-props-no-spreading
       return <Component {...definedProps} />;
     }
   }

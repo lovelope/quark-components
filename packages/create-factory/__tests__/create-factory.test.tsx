@@ -26,7 +26,7 @@ describe('create-factory', () => {
       });
     }
 
-    testPair('CreateFactory', props => {
+    testPair('CreateFactory', (props) => {
       @CreateFactory({
         key: 'userId',
         getAction: () => {},
