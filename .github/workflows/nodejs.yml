@@ -25,13 +25,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
      
-    - name: Cache
-      uses: actions/cache@v1
+    - name: restore lerna
+      uses: actions/cache@master
       with:
-        path: ${{ steps.npm-cache.outputs.dir }}
-        key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
+        path: |
+          node_modules
+          */*/node_modules
+        key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
             
     - run: yarn bootstrap
     - run: yarn test
