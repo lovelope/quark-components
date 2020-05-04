@@ -2,7 +2,7 @@
   "name": "@lovelope/quark-components",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.9.0",
+    "@babel/core": "^7.9.6",
     "antd": "^3.26.16",
     "lodash": "^4.17.15",
     "qs": "^6.9.3",
