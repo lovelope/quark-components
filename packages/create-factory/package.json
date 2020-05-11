@@ -39,7 +39,7 @@
     "lodash": "^4.17.15",
     "qs": "^6.9.4",
     "react": "^16.13.1",
-    "react-router": "^5.1.2"
+    "react-router": "^5.2.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.150",
