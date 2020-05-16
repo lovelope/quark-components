@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@babel/core": "^7.9.6",
-    "antd": "^3.26.16",
+    "antd": "^3.26.17",
     "lodash": "^4.17.15",
     "qs": "^6.9.4",
     "react": "^16.13.1",
