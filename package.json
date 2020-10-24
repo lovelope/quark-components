@@ -6,7 +6,7 @@
     "antd": "^3.26.18",
     "lodash": "^4.17.19",
     "qs": "^6.9.4",
-    "react": "^16.13.1",
+    "react": "^17.0.1",
     "react-router": "^5.2.0"
   },
   "devDependencies": {
