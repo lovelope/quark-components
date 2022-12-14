@@ -61,11 +61,13 @@
   "workspaces": {
     "packages": [
       "packages/*"
-    ],
-    "nohoist": [
-      "**/react",
-      "**/react-dom/**"
     ]
+  },
+  "resolutions": {
+    "@types/react": "^17.0.0",
+    "@types/react-router/**/@types/react": "^17.0.0",
+    "@types/react-slick/**/@types/react": "^17.0.0",
+    "react-router/**/react": "^17.0.0"
   },
   "prettier": {
     "endOfLine": "lf",

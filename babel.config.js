@@ -5,6 +5,8 @@ module.exports = {
   plugins: [
     ['@babel/plugin-proposal-decorators', { legacy: true }], // supporting decorators, need to place before `class-properties`
     ['@babel/plugin-proposal-class-properties', { loose: true }], // supporting `handleChange = () => {}` syntax
+    ['@babel/plugin-proposal-private-property-in-object', { loose: true }],
+    ['@babel/plugin-proposal-private-methods', { loose: true }],
     '@babel/plugin-syntax-dynamic-import', // supporting `() => import('./Home')` syntax
     'babel-plugin-lodash', // for lodash tree shaking
     [
@@ -21,7 +23,8 @@ module.exports = {
       {
         modules: false,
         useBuiltIns: 'usage',
-        corejs: 2,
+        corejs: 3,
+        loose: false,
       },
     ],
     '@babel/preset-typescript',
