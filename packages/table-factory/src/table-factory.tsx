@@ -74,99 +74,101 @@ export type TableFactoryType = (
   Component: React.ComponentType<WrapperComponentProps>
 ) => React.ComponentType;
 
-const TableFactory: TableFactoryType = ({
-  immediate = true,
-  enums = initialEnums,
-  mute = ['keyword'],
-  getAction,
-  params = {},
-  format = (p) => p,
-}: TableFactoryProps) => (Component: React.ComponentType) => {
-  const store = new ParamsStore({
-    [enums.page]: params[enums.page] || 1,
-    [enums.pageSize]: params[enums.pageSize] || 20,
-    ...params,
-  });
-  class WrapperComponent extends React.Component<
-    WrapperComponentProps,
-    WrapperComponentState
-  > {
-    // eslint-disable-next-line react/static-property-placement
-    static displayName = `TableFactory(${
-      Component.displayName || Component.name || 'Component'
-    })`;
+const TableFactory: TableFactoryType =
+  ({
+    immediate = true,
+    enums = initialEnums,
+    mute = ['keyword'],
+    getAction,
+    params = {},
+    format = (p) => p,
+  }: TableFactoryProps) =>
+  (Component: React.ComponentType) => {
+    const store = new ParamsStore({
+      [enums.page]: params[enums.page] || 1,
+      [enums.pageSize]: params[enums.pageSize] || 20,
+      ...params,
+    });
+    class WrapperComponent extends React.Component<
+      WrapperComponentProps,
+      WrapperComponentState
+    > {
+      // eslint-disable-next-line react/static-property-placement
+      static displayName = `TableFactory(${
+        Component.displayName || Component.name || 'Component'
+      })`;
 
-    constructor(props) {
-      super(props);
-      this.state = {
-        query: { ...store.params },
-        data: {},
-        isLoading: false,
-      };
-    }
-
-    componentDidMount() {
-      this.loadData();
-    }
-
-    onFilter = (queryParams = {}, cb = () => {}) => {
-      const { query } = this.state;
-      let updatedQuery = {};
-      if (
-        immediate &&
-        Object.keys(queryParams).every((p) => p !== enums.page)
-      ) {
-        updatedQuery = { ...query, ...queryParams, [enums.page]: 1 };
-      } else {
-        updatedQuery = { ...query, ...queryParams };
+      constructor(props) {
+        super(props);
+        this.state = {
+          query: { ...store.params },
+          data: {},
+          isLoading: false,
+        };
       }
 
-      this.setState({ query: { ...updatedQuery } }, () => {
+      componentDidMount() {
+        this.loadData();
+      }
+
+      onFilter = (queryParams = {}, cb = () => {}) => {
+        const { query } = this.state;
+        let updatedQuery = {};
         if (
           immediate &&
-          !Object.keys(queryParams).some((p) => mute.includes(p))
+          Object.keys(queryParams).every((p) => p !== enums.page)
         ) {
-          this.loadData();
+          updatedQuery = { ...query, ...queryParams, [enums.page]: 1 };
+        } else {
+          updatedQuery = { ...query, ...queryParams };
         }
-        cb();
-        store.setPathQuery(updatedQuery);
-      });
-    };
 
-    onReset = () => {
-      const { query } = this.state;
-      const emptyQuery = {
-        ...mapValues(query, () => ''),
-        [enums.page]: params[enums.page] || 1,
-        [enums.pageSize]: params[enums.pageSize] || 20,
-        ...params,
+        this.setState({ query: { ...updatedQuery } }, () => {
+          if (
+            immediate &&
+            !Object.keys(queryParams).some((p) => mute.includes(p))
+          ) {
+            this.loadData();
+          }
+          cb();
+          store.setPathQuery(updatedQuery);
+        });
       };
-      this.setState({ query: { ...emptyQuery } }, () => {
-        this.loadData();
-      });
-    };
 
-    // 允许主动调用取值函数
-    loadData = async () => {
-      this.setState({ isLoading: true });
-      const { query } = this.state;
-      const response = await getAction(format(query));
-      this.setState({ data: (response || {}).data || {}, isLoading: false });
-    };
-
-    render() {
-      const definedProps = {
-        ...this.state,
-        ...this.props,
-        loadData: this.loadData,
-        onFilter: this.onFilter,
-        onReset: this.onReset,
+      onReset = () => {
+        const { query } = this.state;
+        const emptyQuery = {
+          ...mapValues(query, () => ''),
+          [enums.page]: params[enums.page] || 1,
+          [enums.pageSize]: params[enums.pageSize] || 20,
+          ...params,
+        };
+        this.setState({ query: { ...emptyQuery } }, () => {
+          this.loadData();
+        });
       };
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      return <Component {...definedProps} />;
+
+      // 允许主动调用取值函数
+      loadData = async () => {
+        this.setState({ isLoading: true });
+        const { query } = this.state;
+        const response = await getAction(format(query));
+        this.setState({ data: (response || {}).data || {}, isLoading: false });
+      };
+
+      render() {
+        const definedProps = {
+          ...this.state,
+          ...this.props,
+          loadData: this.loadData,
+          onFilter: this.onFilter,
+          onReset: this.onReset,
+        };
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        return <Component {...definedProps} />;
+      }
     }
-  }
-  return WrapperComponent;
-};
+    return WrapperComponent;
+  };
 
 export default TableFactory;

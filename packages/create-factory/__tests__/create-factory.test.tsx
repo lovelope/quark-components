@@ -34,16 +34,14 @@ describe('create-factory', () => {
       })
       class Email extends React.Component<CreateFactoryProps> {
         render() {
-          const {
-            form: { getFieldDecorator },
-          } = this.props;
+          const { ref } = this.props;
           return (
-            <Form>
-              <FormItem label="username">
-                {getFieldDecorator('name')(<Input />)}
+            <Form ref={ref}>
+              <FormItem label="username" name="name">
+                <Input />
               </FormItem>
-              <FormItem label="Eamil">
-                {getFieldDecorator('email')(<Input />)}
+              <FormItem label="Eamil" name="email">
+                <Input />
               </FormItem>
             </Form>
           );

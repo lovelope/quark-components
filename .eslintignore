@@ -5,3 +5,9 @@ node_modules
 public
 .idea
 .vscode
+.eslintrc.js
+__mocks__
+coverage
+jest.config.js
+jest.setup.js
+babel.config.js

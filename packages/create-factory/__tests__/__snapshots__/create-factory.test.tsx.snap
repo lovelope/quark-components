@@ -2,75 +2,79 @@
 
 exports[`create-factory components CreateFactory normal 1`] = `
 <form
-  class="ant-form ant-form-horizontal"
+  class="ant-form ant-form-horizontal css-dev-only-do-not-override-26rdvq"
 >
   <div
-    class="ant-row ant-form-item"
+    class="ant-form-item css-dev-only-do-not-override-26rdvq"
   >
     <div
-      class="ant-col ant-form-item-label"
-    >
-      <label
-        class=""
-        for="name"
-        title="username"
-      >
-        username
-      </label>
-    </div>
-    <div
-      class="ant-col ant-form-item-control-wrapper"
+      class="ant-row ant-form-item-row css-dev-only-do-not-override-26rdvq"
     >
       <div
-        class="ant-form-item-control"
+        class="ant-col ant-form-item-label css-dev-only-do-not-override-26rdvq"
       >
-        <span
-          class="ant-form-item-children"
+        <label
+          class=""
+          for="name"
+          title="username"
         >
-          <input
-            class="ant-input"
-            data-__field="[object Object]"
-            data-__meta="[object Object]"
-            id="name"
-            type="text"
-            value=""
-          />
-        </span>
+          username
+        </label>
+      </div>
+      <div
+        class="ant-col ant-form-item-control css-dev-only-do-not-override-26rdvq"
+      >
+        <div
+          class="ant-form-item-control-input"
+        >
+          <div
+            class="ant-form-item-control-input-content"
+          >
+            <input
+              class="ant-input css-dev-only-do-not-override-26rdvq"
+              id="name"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div
-    class="ant-row ant-form-item"
+    class="ant-form-item css-dev-only-do-not-override-26rdvq"
   >
     <div
-      class="ant-col ant-form-item-label"
-    >
-      <label
-        class=""
-        for="email"
-        title="Eamil"
-      >
-        Eamil
-      </label>
-    </div>
-    <div
-      class="ant-col ant-form-item-control-wrapper"
+      class="ant-row ant-form-item-row css-dev-only-do-not-override-26rdvq"
     >
       <div
-        class="ant-form-item-control"
+        class="ant-col ant-form-item-label css-dev-only-do-not-override-26rdvq"
       >
-        <span
-          class="ant-form-item-children"
+        <label
+          class=""
+          for="email"
+          title="Eamil"
         >
-          <input
-            class="ant-input"
-            data-__field="[object Object]"
-            data-__meta="[object Object]"
-            id="email"
-            type="text"
-            value=""
-          />
-        </span>
+          Eamil
+        </label>
+      </div>
+      <div
+        class="ant-col ant-form-item-control css-dev-only-do-not-override-26rdvq"
+      >
+        <div
+          class="ant-form-item-control-input"
+        >
+          <div
+            class="ant-form-item-control-input-content"
+          >
+            <input
+              class="ant-input css-dev-only-do-not-override-26rdvq"
+              id="email"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
